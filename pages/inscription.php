@@ -1,8 +1,7 @@
-<div class="container-fluid">
-<div class="row">
-    <div class="col-lg-10 m-auto ">
-        <div class="card bg-primary mt-5  border-info">
-           <div class="card bg-white mt-5 ml-5 mb-5 mr-5">
+<div class="row ml-1">
+    
+        <div class="card bg-primary mt-1">
+           <div class="card bg-white mt-2 ml-5 mb-5 mr-5">
            <div class="card-title text-center mt-3">
             
             <p class="text text-center font-weight-bold">S'incrire  </br> pour tester votre niveau en Culture Generale</p>
@@ -14,27 +13,27 @@
             <div class="col-5">
                 <div class="form-group">
                     <label for="nom">Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter Your name">
+                    <input type="text" class="form-control sous" id="nom" name="nom" placeholder=" Name">
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="prenom">Prenom</label>
-                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Enter Your Last Name">
+                    <input type="text" class="form-control sous" id="prenom" name="prenom" placeholder="Last Name">
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control" id="login" name="login" placeholder="Enter Your Login">
+                    <input type="text" class="form-control sous" id="login" name="login" placeholder="Login">
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password">
+                    <input type="password" class="form-control sous" id="password" name="password" placeholder="Password">
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="password2">Confirm Password</label>
-                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Your Password">
+                    <input type="password" class="form-control sous" id="password2" name="password2" placeholder="Confirm">
                     <small></small>
                 </div>
 
@@ -42,7 +41,7 @@
             </div>
 
 
-            <div class="col mt-3 ml-4">
+            <div class="col  ml-4">
             <div class="form-group">
                     <label for="avatar" class="text text-center">Avatar</label>
                     <br>
@@ -69,11 +68,10 @@
            </div>
         </div>
 
-    </div>
-</div>
+    
 </div>
 <script>
-    function previewImage(){
+   function previewImage(){
                var file = document.getElementById('avatar').files;
                if (file.length > 0) {
                    var fileReader = new FileReader();
@@ -86,6 +84,7 @@
                    alert("Trop Grand");
                }
             }
+            
 </script>
 
 

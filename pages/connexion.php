@@ -1,4 +1,5 @@
 <?php
+/*
 if (isset($_POST['connexion'])) {
   var_dump($_POST);
   if (empty($_POST['login'])) {
@@ -19,9 +20,8 @@ if (isset($_POST['connexion'])) {
         
 }
 }
-
+*/
 ?>
-<div class="container-fluid">
 <div class="row">
     <div class="col-lg-5 m-auto sm-auto">
         <div class="card bg-primary mt-5 cadre">
@@ -29,7 +29,7 @@ if (isset($_POST['connexion'])) {
             <img src="./public/images/icones/team.png" width="150px" height="150px">
             </div>
             <div class="card-body">
-            <form method="POST" action="" id="form_connexion">
+            <form id="form_connexion" action="Javascript:void(0);">
                     <div class="form-group">
                         <label for="login" class="control-label">Login</label>
                         <div class="row ">
@@ -41,7 +41,6 @@ if (isset($_POST['connexion'])) {
                             <small></small>
                         </div>
                     </div>
-                
                     <div class="form-group ">
                         <label for="password" class="control-label">Password</label>
                         <div class="row">
@@ -50,11 +49,20 @@ if (isset($_POST['connexion'])) {
                             </div>
                             <input type="password" class="form-control-lg " name="password" id="password" >
                             <small></small>
-                            
-                        </div>
-                    </div>
-                    
-                        <?php
+                           </div>
+                    </div>                            
+<input type="submit" class="btn btn-success mt-3 btn-block lg" name="connexion" id="connexion" value="Connexion" />   
+    <input type="button" id="inscription"  class="btn btn-primary mt-3 btn-block lg" name="inscription" value="Inscription">    
+    </form>
+    
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+                        /*
                         if (isset($error)) {
                             ?>
                             <div class="error">
@@ -63,55 +71,5 @@ if (isset($_POST['connexion'])) {
                                 <?php
                             
                         }
-                        ?>
-                        
-                    
-                
-            <input type="submit" class="btn btn-success mt-3" name="connexion" id="connexion" value="CONNEXION" >       
-            </form>
-            <a href="index.php?lien=inscription" class="text float-right text-dark text-decoration-none mt-4 ">S'inscrire pour Jouer?</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
-<script>
-   const form=document.getElementById("form_connexion");
-   const login=document.getElementById("login");
-   const password=document.getElementById("password");
-
-   function checkRequired(ArrayInputs){
-    ArrayInputs.forEach(input=>{
-        if (input.value.trim()==="") {
-            showErroor(input,`${RenameInput(input)} is Required`);
-        }else{
-            showSuccess(input);
-        }
-    });
-}
-
- function showErroor(input,message){
-    const parent=input.parentElement;
-    parent.className='row erreur';
-
-    const small=parent.querySelector('small');
-    small.innerText=message;
- }
- function showSuccess(input){
-     const parent = input.parentElement;
-     parent.className='row valide';
- }
- function RenameInput(input){
-     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
- }
- form.addEventListener('submit',(e)=>{
-    
-    
-    checkRequired([login,password]);
-    e.preventDefault();
-    return false;
-   
-});
-</script>
-                    
+                        */
+                        ?>                   
