@@ -8,32 +8,32 @@
             
             </div>
             <div class="card-body">
-         <form>
+         <form id="form" method="post"  enctype="multipart/form-data">
          <div class="row">
             <div class="col-5">
                 <div class="form-group">
                     <label for="nom">Nom</label>
-                    <input type="text" class="form-control sous" id="nom" name="nom" placeholder=" Name">
+                    <input type="text" class="form-control sous" id="nom" name="nom" placeholder=" Name" required>
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="prenom">Prenom</label>
-                    <input type="text" class="form-control sous" id="prenom" name="prenom" placeholder="Last Name">
+                    <input type="text" class="form-control sous" id="prenom" name="prenom" placeholder="Last Name" required>
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control sous" id="login" name="login" placeholder="Login">
+                    <input type="text" class="form-control sous" id="login" name="login" placeholder="Login" required>
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control sous" id="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control sous" id="password" name="password" placeholder="Password" required>
                     <small></small>
                 </div>
                 <div class="form-group">
                     <label for="password2">Confirm Password</label>
-                    <input type="password" class="form-control sous" id="password2" name="password2" placeholder="Confirm">
+                    <input type="password" class="form-control sous" id="password2" name="password2" placeholder="Confirm" required>
                     <small></small>
                 </div>
 
@@ -45,7 +45,7 @@
             <div class="form-group">
                     <label for="avatar" class="text text-center">Avatar</label>
                     <br>
-                    <div class="row-lg">
+                    <div class="row-lg bg-dark">
         <div class="blocavatar"> 
                     <div class="imgavatar">
                      <img id="preview" class="avatarprofil">
@@ -56,7 +56,7 @@
                     <input type="file" value="Choisir un fichier" class="btn btn-primary" name="avatar" id="avatar" required accept="png, jpg" onchange="previewImage();">
                     <small></small>
                 </div>
-                <input type="submit" class="btn btn-primary lg" value="Creer Compte">
+                <input type="submit" class="btn btn-primary lg" value="Creer Compte" id="btn-creer">
             </div>
             
         
@@ -84,7 +84,32 @@
                    alert("Trop Grand");
                }
             }
+            $('#btn-creer').click(function(){
+        const nom = $('#nom').val();
+        const prenom = $('#prenom').val();
+        const login = $('#login').val();
+        const password = $('#password').val();
+        const password2 = $('#password2').val();
+        const avatar = 'avatar';//$('#avatar').val();
+        //console.log($('form').serialize());
+        if(nom == '' || prenom =='' || login =='' || password ==''){
+            return false;
+        }
+        if(password != password2){
+            return false;
+        }
+        
+
+        $.ajax({
+                type: "POST",
+                url: "http://localhost/BA_Moussa_Quizz2Ajax/data/model.php",
+                data: {nom:nom,prenom:prenom,login:login,password:password,password2:password2,avatar:avatar},
+                dataType: "JSON",
+              
+            });
+    }) 
             
 </script>
+
 
 

@@ -25,7 +25,27 @@ function getUserConnexion($login, $password)
 return $req;
 }
 
-function insertUser($Array){
+function saveUser($post){
     $opdo=getConnexion();
-    $sql='INSERT INTO  users  login =:login AND password =:password';
+    $nom=$post['nom'];
+    $prenom=$post['prenom'];
+    $login=$post['login'];
+    $password=$post['password'];
+    $avatar=$post['avatar'];
+
+    $val= array(
+        'nom' =>$post['nom'],
+        'prenom'=>$post['prenom'],
+        'login'=>$post['login'],
+        'password'=>$post['password'],
+        'avatar' => /*$_FILES['avatar']*/'photo',
+        'etat_compte'=> 1
+    );
+
+    $opdo=getConnexion();
+
+    $sql="INSERT INTO users(nom,prenom,password,avatar,profile,etat_compte) VALUES (:nom,:prenom,:login,:password,:avatar:,etat_compte)";
+    $req = $opdo->prepare($sql);
+    $result= $req->execute($val);
+    //echo json_encode($result);
 }

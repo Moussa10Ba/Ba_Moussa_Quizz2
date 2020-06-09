@@ -1,7 +1,7 @@
-const form =document.getElementById('form_connexion');
+/*const form =document.getElementById('form_connexion');
 const container=document.getElementById('container');
-const inscription = document.getElementById('inscription');
-
+//const inscription = document.getElementById('inscription');
+/*
 inscription.addEventListener('click',()=>{
     sendData('inscription',container,false);
 })
@@ -47,5 +47,5 @@ function getFormData()
 
    return donnee;
 }
-
+*/
 
