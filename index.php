@@ -1,21 +1,14 @@
 <?php
-  require_once './traitements/controller.php';
- 
-
- 
+  require_once './traitements/controller.php'; 
      if(isset($_GET["action"]))
      {
- 
          if($_GET["action"]=='connexion')
          {
- 
              $data=$_POST;
-             pageConnexion($data);
-            
+             pageConnexion($data);  
          }
          else if($_GET["action"]=='inscription')
          {
- 
              require_once './pages/inscription.php';
          }
      }

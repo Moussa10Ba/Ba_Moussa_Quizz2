@@ -1,3 +1,6 @@
+<html>
+<head></head>
+<body>
 <div class="row ml-1">
     
         <div class="card bg-primary mt-1">
@@ -53,7 +56,7 @@
              </div>
         </div>
                     <br><br>
-                    <input type="file" value="Choisir un fichier" class="btn btn-primary" name="avatar" id="avatar" required accept="png, jpg" onchange="previewImage();">
+                    <input type="file" value="Choisir un fichier" class="btn btn-primary" name="avatar" id="avatar" required accept="png, jpg" >
                     <small></small>
                 </div>
                 <input type="submit" class="btn btn-primary lg" value="Creer Compte" id="btn-creer">
@@ -70,28 +73,37 @@
 
     
 </div>
-<script>
-   function previewImage(){
-               var file = document.getElementById('avatar').files;
-               if (file.length > 0) {
-                   var fileReader = new FileReader();
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-                   fileReader.onload = function (event){
-                       document.getElementById("preview").setAttribute("src", event.target.result);
-                   };
-                    fileReader.readAsDataURL(file[0]);
-               }else{
-                   alert("Trop Grand");
-               }
-            }
-            $('#btn-creer').click(function(){
-        const nom = $('#nom').val();
-        const prenom = $('#prenom').val();
-        const login = $('#login').val();
-        const password = $('#password').val();
-        const password2 = $('#password2').val();
-        const avatar = 'avatar';//$('#avatar').val();
-        //console.log($('form').serialize());
+<script>
+$('document').ready(function(){
+     function previewImage(){
+                var file = document.getElementById('avatar').files;
+                if (file.length > 0) {
+                    var fileReader = new FileReader();
+
+                    fileReader.onload = function (event){
+                        document.getElementById("preview").setAttribute("src", event.target.result);
+                    };
+                     fileReader.readAsDataURL(file[0]);
+                }else{
+                    alert("Trop Grand");
+                }
+           }
+
+            $('#form').on('submit',function(e){
+
+                e.preventDefault();
+                  
+        var form = $(this);
+        var dataForm = new FormData(form[0]);
+        var nom = $('#nom').val();
+        var prenom = $('#prenom').val();
+        var login = $('#login').val();
+        var password = $('#password').val();
+        var password2 = $('#password2').val();
+        var avatar = 'avatar';
+        
         if(nom == '' || prenom =='' || login =='' || password ==''){
             return false;
         }
@@ -101,15 +113,27 @@
         
 
         $.ajax({
+
                 type: "POST",
-                url: "http://localhost/BA_Moussa_Quizz2Ajax/data/model.php",
-                data: {nom:nom,prenom:prenom,login:login,password:password,password2:password2,avatar:avatar},
-                dataType: "JSON",
+                url: "http://localhost/BA_Moussa_Quizz2Ajax/traitements/saveUser.php",
+                
+                contentType:false,
+                processData:false,
+                data:dataForm,
+                dataType: "text",
+                success:function(reponse){
+                    console.log(reponse);
+                }
               
-            });
-    }) 
+            })
+        });
+});
+   
+    
             
 </script>
+</body>
+</html>
 
 
 

@@ -69,7 +69,6 @@ if (isset($_POST['connexion'])) {
                                 <?php echo $error;?>
                                 </div>
                                 <?php
-                            
-                        }
+}
                         */
                         ?>                   
