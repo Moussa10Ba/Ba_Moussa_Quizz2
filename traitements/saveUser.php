@@ -8,6 +8,7 @@ else{
     echo "failed";
 }
 /*/  
+
  $opdo=getConnexion();
     $nom=$_POST['nom'];
     $prenom=$_POST['prenom'];

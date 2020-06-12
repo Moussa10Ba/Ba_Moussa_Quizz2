@@ -1,5 +1,5 @@
 <?php 
- 
+  require_once './data/db.php';
 
 
 function getUserConnexion($login, $password)

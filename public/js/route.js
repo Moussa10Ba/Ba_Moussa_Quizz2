@@ -1,8 +1,8 @@
 /*const form =document.getElementById('form_connexion');
 const container=document.getElementById('container');
 //const inscription = document.getElementById('inscription');
-/*
-inscription.addEventListener('click',()=>{
+
+/*inscription.addEventListener('click',()=>{
     sendData('inscription',container,false);
 })
 
@@ -30,7 +30,11 @@ function sendData(action,conten,is_post)
             }
         }
     } 
-
+// tu n'as pas appliqué la methode de mr wane donc!??
+//fin
+// J'ai ouvert son projet essayer de comprendre son focntionnemnet mais j'y arrivais pas nous m'avions pas la mm strucuture
+// des fichiers fin
+//je vois tu as le projet ici??
     var donnee="";
     if(is_post)
     {

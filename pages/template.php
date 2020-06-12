@@ -20,17 +20,16 @@
           <img src="./public/images/icones/logo.png"  width="50" height="90" alt="" loading="lazy">
         </a>
         <div class="row justify-content-center">
-        <h1 class="text float-left font-weight-bold text-white">LE PLAISIR DE JOUER</h1>
+        <div class="titre"><h1 class="text text-center font-weight-bold text-white">LE PLAISIR DE JOUER</h1></div>
+        
         </div>
   </nav>
-  <script src="./public/js/route.js"></script>
-  <script src="./public/js/jquery.js"></script>
-  <div id="container" class="container-fluid">
-            <?php
-           require_once './pages/acceuil.php';
-            ?> 
-      </div>
+  <div id="container_template" class="container-fluid">
+            <?php include_once './pages/connexion.php'?>
+  </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="./public/js/script.js"></script>
+  <script src="./public/js/jquery.js"></script>
 
   </body>
 </html> 

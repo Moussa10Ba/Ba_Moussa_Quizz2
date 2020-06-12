@@ -14,11 +14,13 @@
 
         if($result_array['profile']=="admin")
         {
-            require_once './pages/acceuil.php';
+            echo "accueil";// maintenant ca renvoit accueil
+           // require_once './pages/acceuil.php';
         }
         else
         {
-            require_once './pages/jeux.php';
+            echo "jeux ";
+          //  require_once './pages/jeux.php';
         }
      }
      else
@@ -27,6 +29,7 @@
      }
 
  }
+ 
 
  
 

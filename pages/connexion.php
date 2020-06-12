@@ -19,7 +19,7 @@ if (isset($_POST['connexion'])) {
         }
         
 }
-}
+}on commence les tests
 */
 ?>
 <div class="row">
@@ -28,8 +28,10 @@ if (isset($_POST['connexion'])) {
             <div class="card-title text-center mt-3">
             <img src="./public/images/icones/team.png" width="150px" height="150px">
             </div>
+            <!-- le message d'erreur  l'id du form n'est pas le mm que dans le script-->
+            <div id="error_message" class="text-danger alert-danger text-center">Le login ou mot de passe incorrects </div> 
             <div class="card-body">
-            <form id="form_connexion" action="Javascript:void(0);">
+            <form id="form_connexion" method="post" action="index.php?action=connexion">
                     <div class="form-group">
                         <label for="login" class="control-label">Login</label>
                         <div class="row ">
@@ -61,14 +63,4 @@ if (isset($_POST['connexion'])) {
     </div>
 </div>
 
-<?php
-                        /*
-                        if (isset($error)) {
-                            ?>
-                            <div class="error">
-                                <?php echo $error;?>
-                                </div>
-                                <?php
-}
-                        */
-                        ?>                   
+<?php ?>                   

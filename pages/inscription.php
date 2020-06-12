@@ -56,7 +56,7 @@
              </div>
         </div>
                     <br><br>
-                    <input type="file" value="Choisir un fichier" class="btn btn-primary" name="avatar" id="avatar" required accept="png, jpg" >
+                    <input type="file" value="Choisir un fichier" class="btn btn-primary" name="avatar" id="avatar" required accept="png, jpg" onchange="previewImage();">
                     <small></small>
                 </div>
                 <input type="submit" class="btn btn-primary lg" value="Creer Compte" id="btn-creer">
@@ -76,8 +76,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script>
-$('document').ready(function(){
-     function previewImage(){
+ function previewImage(){
                 var file = document.getElementById('avatar').files;
                 if (file.length > 0) {
                     var fileReader = new FileReader();
@@ -90,6 +89,8 @@ $('document').ready(function(){
                     alert("Trop Grand");
                 }
            }
+$('document').ready(function(){
+    
 
             $('#form').on('submit',function(e){
 
@@ -126,7 +127,9 @@ $('document').ready(function(){
                 }
               
             })
+        
         });
+
 });
    
     
